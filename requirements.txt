@@ -1,0 +1,11 @@
+opencv-python
+yolov5
+numba
+numpy==1.23.5
+#%pip install adversarial-robustness-toolbox
+torch
+matplotlib
+requests
+pandas
+torchvision
+torchtnt
