@@ -4,7 +4,7 @@ This repository is based on parts of the adversarial-robustness-toolbox (ART): h
 
 The repository allows to interactively generate an [Adversarial Patch](https://arxiv.org/pdf/1712.09665) using a white-box attack on [Yolov5](https://github.com/ultralytics/yolov5)
 
-## Prerequisites:
+## Installation:
 
 Download our fork of ART: [https://github.com/xHascox/adversarial-robustness-toolbox](https://github.com/xHascox/adversarial-robustness-toolbox)
 
@@ -17,6 +17,10 @@ and install it:
 As well as the other requirements:
 
 `pip install -r requirements. txt`
+
+## Usage:
+
+Run the notebook [Adversarial-Patch-ART-Collusion.ipynb](Adversarial-Patch-ART-Collusion.ipynb), which should be self-explanatory.
 
 ## Datasets:
 
