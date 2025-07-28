@@ -1,52 +1,40 @@
 # Adversarial Patch ART
  
-Based on https://github.com/Trusted-AI/adversarial-robustness-toolbox
+This repository is based on parts of the adversarial-robustness-toolbox (ART): https://github.com/Trusted-AI/adversarial-robustness-toolbox
 
-pip install -e /path/to/locations/repo
+The repository allows to interactively generate an [Adversarial Patch](https://arxiv.org/pdf/1712.09665) using a white-box attack on [Yolov5](https://github.com/ultralytics/yolov5)
 
+## Prerequisites:
 
+Download our fork of ART: [https://github.com/xHascox/adversarial-robustness-toolbox](https://github.com/xHascox/adversarial-robustness-toolbox)
 
-cmd:
+`gh repo clone xHascox/adversarial-robustness-toolbox`
 
-nvidia-smi --loop=5
+and install it:
 
+`pip install -e /path/to/xHascox/adversarial-robustness-toolbox`
 
+As well as the other requirements:
 
+`pip install -r requirements. txt`
 
-## Dataset:
+## Datasets:
 
-There are 3 scenarios involving pedestrians:
+### Dataset V1:
+
+Download Dataset V1: [https://storage.googleapis.com/weebit-shared/ParkingCrossingPedestrian.zip](https://storage.googleapis.com/weebit-shared/ParkingCrossingPedestrian.zip)
+
+This includes 3 scenarios involving pedestrians:
 * ParkingCrossingPedestrian
 * PedestrianCrossing
 * VehicleTurningRoutePedestrian
 
+#### Script: 
 
+Or download it from the original source using the script provided in Carla Garage:
+[https://github.com/autonomousvision/carla_garage/blob/leaderboard_2/tools/download_data.sh](https://github.com/autonomousvision/carla_garage/blob/leaderboard_2/tools/download_data.sh)
 
-
-### Script: 
-
-https://github.com/autonomousvision/carla_garage/blob/leaderboard_2/tools/download_data.sh
-
-```
-#!/usr/bin/env bash
-
-mkdir data
-cd data
-
-down_load_unzip() {
-  wget https://s3.eu-central-1.amazonaws.com/avg-projects-2/garage_2/dataset/$1.tar
-  tar -xf $1.tar
-  rm $1.tar
-}
-
-# Download 2024 garage_v1 dataset
-for scenario in Accident AccidentTwoWays BlockedIntersection ConstructionObstacle ConstructionObstacleTwoWays ControlLoss CrossingBicycleFlow DynamicObjectCrossing EnterActorFlow EnterActorFlowV2 HardBreakRoute HazardAtSideLane HazardAtSideLaneTwoWays HighwayCutIn HighwayExit InterurbanActorFlow InterurbanAdvancedActorFlow InvadingTurn MergerIntoSlowTraffic MergerIntoSlowTrafficV2 NonSignalizedJunctionLeftTurn NonSignalizedJunctionRightTurn noScenarios OppositeVehicleRunningRedLight OppositeVehicleTakingPriority ParkedObstacle ParkedObstacleTwoWays ParkingCrossingPedestrian ParkingCutIn ParkingExit PedestrianCrossing PriorityAtJunction SignalizedJunctionLeftTurn SignalizedJunctionRightTurn StaticCutIn VehicleOpensDoorTwoWays VehicleTurningRoute VehicleTurningRoutePedestrian YieldToEmergencyVehicle
-do
-  down_load_unzip "${scenario}" &
-done
-```
-
-Just the relevant scenarios:
+Or just the relevant scenarios:
 
 ```
 #!/usr/bin/env bash
@@ -69,11 +57,14 @@ done
 
 On Windows, one can download individual scenarious using wget, but make sure to specify -OutFile as otherwise it crashes. 
 
-Like this:
+Like this: (repeat for all 3 scenarios)
 
 ```
 wget https://s3.eu-central-1.amazonaws.com/avg-projects-2/garage_2/dataset/ParkingCrossingPedestrian.tar -OutFile ParkingCrossingPedestrian
 ```
 
-# asdasd 
+### Dataset V5:
+
+
+Download Dataset V5: [https://storage.googleapis.com/weebit-shared/dsv5.zip](https://storage.googleapis.com/weebit-shared/dsv5.zip) 
 
