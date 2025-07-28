@@ -6,9 +6,13 @@ The repository allows to interactively generate an [Adversarial Patch](https://a
 
 ## Installation:
 
+Clone this repo:
+
+`git clone https://github.com/xHascox/Adversarial-Patch-ART.git`
+
 Download our fork of ART: [https://github.com/xHascox/adversarial-robustness-toolbox](https://github.com/xHascox/adversarial-robustness-toolbox)
 
-`gh repo clone xHascox/adversarial-robustness-toolbox`
+`git clone https://github.com/xHascox/adversarial-robustness-toolbox.git`
 
 and install it:
 
