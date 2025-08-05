@@ -1,0 +1,89 @@
+rotation_max=5#20#20 # 0.0 # degrees
+rotation_max=20
+scale_min=0.05#0.03 # 0.05
+scale_max=0.10
+scale_min=0.015#0.03 # 0.05
+scale_max=0.025
+distortion_scale_max=0.2#.2#.3 # [0,1]
+distortion_scale_max = 0.4
+learning_rate=0.01#0.001 #1.99 # 0.003
+learning_rate=0.01
+max_epochs=15#0#0000 #1000 # 50000 gives a good result
+max_steps = 0
+if not GENERATE:
+    max_epochs = 1
+    max_steps = 1
+batch_size=3 # 2 ~ 12.7 GB VRAM with yolov5s - yolov5x with batch=1 21 GB
+patch_type="square"
+optimizer="Adam" # pgd and Adam
+scheduler = "CosineAnnealingWarmRestarts" # "CosineAnnealingWarmRestarts" # or StepLR
+decay_rate=1.0
+decay_step=max_epochs
+patch_location=(400, 200) # TODO
+targeted = True
+patch_shape=(3, 512, 512)#(3, 128, 128) or 512
+contrast_min = 0.3#0.4 physical
+contrast_max = 0.5#0.7 physical
+if DISGUISE_PATH:
+    disguise = np.array(Image.open(DISGUISE_PATH).resize(patch_shape[1:]))
+    disguise = disguise.transpose(2,0,1)
+else:
+    disguise = None
+disguise_distance_factor = 1/400000 # 1/700000#000 # 1/30000 for 128, 1/200000 for 512
+# 0.0005 was too much for stop mountain
+split = False # TODO
+fixed_location_random_scaling = True
+gap_size = 20
+fixed_gap = True
+
+==========
+All named _v5, trained with the above settings
+
+mountain_1
+========================
+STATS for adversarial PATCH
+threshold 0.5
+Number of attacks: 304
+Successful attacks: 0
+Success rate: 0.0
+========================
+STATS for DISGUISE
+threshold 0.5
+Number of attacks: 304
+Successful attacks: 0
+Success rate: 0.0
+
+
+apple
+========================
+STATS for adversarial PATCH
+threshold 0.5
+Number of attacks: 304
+Successful attacks: 91
+Success rate: 0.2993421052631579
+========================
+STATS for DISGUISE
+threshold 0.5
+Number of attacks: 304
+Successful attacks: 2
+Success rate: 0.006578947368421052
+
+camellia
+========================
+STATS for adversarial PATCH
+threshold 0.5
+Number of attacks: 304
+Successful attacks: 127
+Success rate: 0.41776315789473684
+========================
+STATS for DISGUISE
+threshold 0.5
+Number of attacks: 304
+Successful attacks: 1
+Success rate: 0.003289473684210526
+
+
+
+
+
+
