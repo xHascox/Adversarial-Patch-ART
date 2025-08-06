@@ -84,6 +84,23 @@ Success rate: 0.003289473684210526
 
 
 
-
-
-
+Collusion:
+apple_split_3
+========================
+STATS for adversarial PATCH
+threshold 0.5
+Number of attacks: 304
+Successful attacks: 108
+Success rate: 0.35526315789473684
+========================
+STATS for DISGUISE
+threshold 0.5
+Number of attacks: 304
+Successful attacks: 12
+Success rate: 0.039473684210526314
+========================
+STATS for HALF PATCHES
+Successful attacks left: 31
+Successful attacks right: 30
+Success rate left: 0.10197368421052631
+Success rate right: 0.09868421052631579
